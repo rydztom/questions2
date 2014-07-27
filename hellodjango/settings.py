@@ -52,9 +52,9 @@ else:
 SECRET_KEY = '!^9im6@ni5kni)gfilntxxchxu(m4(h&=t$s3i6!&6w7o)^2=c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
