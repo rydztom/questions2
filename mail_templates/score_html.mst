@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <div style="color: red; text-align: center; font-size: 1.2em">
+            {{date}} u scored {{score}} points in our test {{title}}
+            <br><br>
+            questions2.pl
+        </div>
+    </body>
+</html>

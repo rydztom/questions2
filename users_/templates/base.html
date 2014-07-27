@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    {% load staticfiles %}
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/csrf.js' %}"></script>
+    <!-- Style sheets -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+    {% block additional_css %}{% endblock %}
+    {% block additional_js %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+        <ul class="nav nav-pills">
+            {% block navigation %}{% endblock %}
+        </ul>
+        {% block container %}{% endblock %}
+    </div>
+  </body>
+</html>

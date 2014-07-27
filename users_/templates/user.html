@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Test Site
+{% endblock %}
+
+{% block navigation %}
+    <li class="active"><a href="/profile">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+{% endblock %}
+
+{% block container %}
+    <h1>Welcome in User panel</h1>
+    <p>Remember tests have multiple questions</p>
+    <p>To score a point for question u need to mark all correct answers</p>
+    <p>Below u have listed all tests which u can solve</p>
+    <ul id="tests_list" class="list-unstyled">
+        {% for test in tests %}
+            <li><span><a class="test" href="user/{{test.id}}">{{test.title}}</a></span></li>
+        {% endfor %}
+    </ul>
+    <p id="None" {% if tests %}style="display:none;"{% endif %}>Sorry there isn't any test yet</p>
+    <output></output>
+{% endblock %}

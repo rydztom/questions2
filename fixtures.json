@@ -1,0 +1,347 @@
+[
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "marek", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-07-27T13:11:52.908Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$OgyshrhvONbX$z7ke2Y149Q9oqwEdUBzkWPGVc4dYucLVXUfNdIfCOdQ=", 
+        "email": "younger_rydzu@interia.pl", 
+        "date_joined": "2014-07-27T13:11:52.908Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "users_.userprofile", 
+    "fields": {
+        "userlvl": 1, 
+        "user": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "users_.tests", 
+    "fields": {
+        "title": "FIRST TEST" 
+    }
+},
+{
+    "pk": 2, 
+    "model": "users_.tests", 
+    "fields": {
+        "title": "SECOND TEST"
+    }
+},
+{
+    "pk": 3, 
+    "model": "users_.tests", 
+    "fields": {
+        "title": "THIRD TEST"
+    }
+},
+{
+    "pk": 1, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 1,
+        "question": "FIRST QUESTION"
+    }
+},
+{
+    "pk": 2, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 1,
+        "question": "SECOND QUESTION"
+    }
+},
+{
+    "pk": 3, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 1,
+        "question": "THIRD QUESTION"
+    }
+},
+{
+    "pk": 4, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 2,
+        "question": "FOURTH QUESTION"
+    }
+},
+{
+    "pk": 5, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 2,
+        "question": "FIFTH QUESTION"
+    }
+},
+{
+    "pk": 6, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 2,
+        "question": "SIXTH QUESTION"
+    }
+},
+{
+    "pk": 7, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 3,
+        "question": "SEVENTH QUESTION"
+    }
+},
+{
+    "pk": 8, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 3,
+        "question": "EIGHTH QUESTION"
+    }
+},
+{
+    "pk": 9, 
+    "model": "users_.questions", 
+    "fields": {
+        "test": 3,
+        "question": "NINTH QUESTION"
+    }
+},
+{
+    "pk": 1, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 1,
+        "answer": "FIRST ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 2, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 1,
+        "answer": "SECOND ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 3, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 1,
+        "answer": "THIRD ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 4, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 2,
+        "answer": "FOURTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 5, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 2,
+        "answer": "FIFTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 6, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 2,
+        "answer": "SIXTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 7, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 3,
+        "answer": "SEVENTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 8, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 4,
+        "answer": "EIGTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 9, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 4,
+        "answer": "NINETH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 10, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 4,
+        "answer": "TENTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 11, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 5,
+        "answer": "ELEVENTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 12, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 5,
+        "answer": "TWELFETH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 13, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 5,
+        "answer": "THIRTEENTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 14, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 6,
+        "answer": "FOURTEENTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 15, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 6,
+        "answer": "FIFTEENTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 16, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 6,
+        "answer": "SIXTEENTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 17, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 7,
+        "answer": "SEVENTEENTH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 18, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 7,
+        "answer": "EIGHTEENTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 19, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 7,
+        "answer": "NINETEENTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 20, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 8,
+        "answer": "TWENTIETH ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 21, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 8,
+        "answer": "TWENTY-FIRST ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 22, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 8,
+        "answer": "TWENTY-SECOND ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 23, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 9,
+        "answer": "TWENTY-THIRD ANSWER",
+        "correct": true
+    }
+},
+{
+    "pk": 24, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 9,
+        "answer": "TWENTY-FOURTH ANSWER",
+        "correct": false
+    }
+},
+{
+    "pk": 25, 
+    "model": "users_.answers", 
+    "fields": {
+        "question": 9,
+        "answer": "TWENTY-FIFTH ANSWER",
+        "correct": false
+    }
+}
+
+]

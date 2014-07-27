@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Answers Site
+{% endblock %}
+
+{% block additional_js %}
+    {% load staticfiles %}
+    <script src="{% static 'js/admin_question.js' %}"></script>
+{% endblock %}
+
+{% block additional_css %}
+    {% load staticfiles %}
+    <link href="{% static 'css/basic_admin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <li><a href="/profile">Home</a></li>
+    <li><a href="../">Test</a></li>
+    <li class="active"><a href="#">Question</a></li>
+    <li><a href="/logout">Logout</a></li>
+{% endblock %}
+
+{% block container %}
+    <h1>Question Site</h1>
+    <h1>{{question.question}}</h1>
+    <p class="green">Remember that question must have minimum two answers</p>
+    <p class="green">At least one of answers has to be correct</p>
+    <p>Below u have listed all answers attached to this question</p>
+    
+    <div class="bs-example" id="tests_list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Answer</th>
+                    <th>Correct</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in answers %}
+                <tr>
+                    <td class="title">
+                        <a class="test" id="{{answer.id}}">
+                            {{answer.answer}}
+                        </a>
+                    </td>
+                    <td class="correct">
+                        {{answer.correct}}
+                    </td>
+                    <td class="edit">
+                        <a class="edit">edit</a>
+                    </td>
+                    <td class="cancel">
+                        <a class="delete">delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr class="add_new" style="display: none;">
+                    <form onsubmit="return false;" class="form-signin"
+                          role="form">
+                        {% csrf_token %}
+                        <td class="title">
+                            <textarea name="new_answer" maxlength="50" rows="2" cols="50"></textarea>
+                        </td>
+                        <td class="correct">
+                            <input type="checkbox" name="correct"></input>
+                        </td>
+                        <td class="edit">
+                            <button id="new" onclick="CreateNewAnswer()">
+                                Add
+                            </button>
+                        </td>
+                        <td class="delete">
+                            <button id="cancel">
+                                Cancel
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+                <tr class="add_new_button">
+                    <td>
+                        <button class="btn btn-lg btn-primary btn-block" id="add_new">
+                            Add new question
+                        </button>
+                    <td>
+                </tr>
+            </tbody>
+    </div>
+    <p id="None" {% if answers %}style="display:none;"{% endif %}>
+        There isn't any question yet
+    </p>
+    <output></output>
+{% endblock %}

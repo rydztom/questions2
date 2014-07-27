@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Welcome in questions2
+{% endblock %}
+
+{% block additional_css %}
+    {% load staticfiles %}
+    <link href="{% static 'css/welcome.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block container %}
+    <h1>Welcome on home page of site questions2</h1>
+    <h1>Please sign in before u go further</h1>
+    <h1><a href="/profile">Login</a></h1>
+    <h2>Dont have an account?</h2>
+    <h2><a href="/register">Create one now!</a></h2>
+    
+{% endblock %}

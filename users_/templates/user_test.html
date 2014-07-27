@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Test Site
+{% endblock %}
+
+{% block additional_js %}
+    {% load staticfiles %}
+    <script src="{% static 'js/user_test.js' %}"></script>
+{% endblock %}
+
+{% block navigation %}
+    <li><a href="/profile">Home</a></li>
+    <li class="active"><a href="#">Test</a></li>
+    <li><a href="/logout">Logout</a></li>
+{% endblock %}
+
+{% block container %}
+    <form onsubmit="return false;" class="form-horizontal" role="form">
+        <fieldset>
+            <legend> 
+                {{test.title}}
+            </legend>
+            {% csrf_token %}
+            {% for question in test.questions %}
+                <div class="form-group question" id="{{question.id}}">
+                    <label class="col-md-4 control-label" for="checkboxes">
+                        {{question.question}}
+                    </label>
+                    <div class="col-md-4">
+                        {% for answer in question.answers %}
+                            <div class="checkbox">
+                                <label for="{{question.id}}">
+                                    <input type="checkbox" name="{{question.id}}" value="{{answer.id}}">
+                                    {{answer.answer}}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            {% if test.questions %}
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <input type="checkbox" name="send_mail">
+                            Send me mail with my score
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary" onclick="SendResult()">
+                            Send ur answers
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="checkboxes">
+                </label>
+                <div class="col-md-4">
+                    <output></output>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  </div>
+</div>

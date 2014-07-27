@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Tests Site
+{% endblock %}
+
+{% block additional_js %}
+    {% load staticfiles %}
+    <script src="{% static 'js/admin.js' %}"></script>
+{% endblock %}
+
+{% block additional_css %}
+    {% load staticfiles %}
+    <link href="{% static 'css/basic_admin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <li class="active"><a href="/profile">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+{% endblock %}
+
+{% block container %}
+    <h1>Welcome in Admin panel</h1>
+    <p>U can easily add new tests to ur site</p>
+    <p>Tests can have multiple questions</p>
+    <p>Every question can have mutiple answers</p>
+    <p>User will get a point only if he check all correct answers</p>
+    <p>One bad answer and score for specific question is 0</p>
+    <p class="green">Users wont see test until it will have at least one question with two answers</p>
+    <p class="green">from which one (might be both) will be correct</p>
+    <p>Below u have listed all ur tests</p>
+    <div class="bs-example" id="tests_list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for test in tests %}
+                <tr>
+                    <td class="title">
+                        <a class="test" href="admin/{{test.id}}">
+                            {{test.title}}
+                        </a>
+                    </td>
+                    <td class="edit">
+                        <a class="edit">edit</a>
+                    </td>
+                    <td class="cancel">
+                        <a class="delete">delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr class="add_new" style="display: none;">
+                    <form onsubmit="return false;" class="form-signin"
+                          role="form">
+                        {% csrf_token %}
+                        <td class="title">
+                            <input name="new_test" maxlength="20"></input>
+                        </td>
+                        <td class="edit">
+                            <button id="new" onclick="CreateNewTest()">
+                                Add
+                            </button>
+                        </td>
+                        <td class="delete">
+                            <button id="cancel">
+                                Cancel
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+                <tr class="add_new_button">
+                    <td>
+                        <button class="btn btn-lg btn-primary btn-block" id="add_new">
+                            Add new test
+                        </button>
+                    <td>
+                </tr>
+            </tbody>
+    </div>
+    <p id="None" {% if tests %}style="display:none;"{% endif %}>
+        There isn't any test yet
+    </p>
+    <output></output>
+{% endblock %}

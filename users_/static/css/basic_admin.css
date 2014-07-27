@@ -1,0 +1,45 @@
+.panel {
+  text-align:center;
+}
+h1, p, form{
+  text-align: center;
+}
+span.align-left{
+  width:79%;
+  display:inline-block;
+}
+span.align-center {
+  text-align: center;
+  width:9%;
+}
+span.align-right {
+  text-align: right;
+  width:9%;
+}
+ul li {
+  margin-bottom:10px;
+}
+div.container {
+    width: 500px;
+}
+button#new, button#cancel {
+    width: 140px;
+}
+td.edit, td.cancel {
+    width: 60px;
+}
+button#new, button#cancel {
+    width: 60px;
+}
+input[name=new_test] {
+    width: 330px;
+}
+output {
+    color: red;
+}
+p#None {
+    color: blue;
+}
+p.green {
+    color: green;
+}
