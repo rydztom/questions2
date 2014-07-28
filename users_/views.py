@@ -68,6 +68,7 @@ def register(request):
         except User.DoesNotExist:
             user = User(username=request.POST['username'], password=password,
                         is_superuser=False, email=request.POST['email'])
+            user.save()
             userprofile = UserProfile(user=user, userlvl=1)
             userprofile.save()
             success = "U can now log onto ur account"
