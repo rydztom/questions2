@@ -3,3 +3,4 @@ venv
 staticfiles
 *.sqlite3
 *.egg-info
+.idea
