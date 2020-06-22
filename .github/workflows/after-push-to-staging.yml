@@ -21,7 +21,7 @@ jobs:
       - name: Merge To Testing
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GIT_TOKEN }}
           # Branch to merge
           branchtomerge: staging
           # Branch that will be updated
@@ -30,7 +30,7 @@ jobs:
       - name: Merge To Devel
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GIT_TOKEN }}
           # Branch to merge
           branchtomerge: testing
           # Branch that will be updated
