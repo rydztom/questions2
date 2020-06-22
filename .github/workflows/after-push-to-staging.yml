@@ -18,8 +18,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge To Testing
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
         with:
@@ -27,6 +25,8 @@ jobs:
           branchtomerge: staging
           # Branch that will be updated
           branch: testing
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge To Devel
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
@@ -35,3 +35,5 @@ jobs:
           branchtomerge: testing
           # Branch that will be updated
           branch: devel
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
