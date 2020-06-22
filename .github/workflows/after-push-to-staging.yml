@@ -19,16 +19,18 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Merge To Testing
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
         with:
           # Branch to merge
           branchtomerge: staging
           # Branch that will be updated
           branch: testing
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge To Devel
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: MaximeHeckel/github-action-merge-fast-forward@v1.1.0
         with:
           # Branch to merge
