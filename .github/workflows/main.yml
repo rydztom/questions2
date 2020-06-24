@@ -20,4 +20,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: fnkr/github-action-git-bash@v1.1
         with:
-          args: 'bash -c "git fetch && git checkout staging && git pull origin staging && git checkout testing && git pull origin testing && git pull origin --allow-unrelated-histories staging && git push origin testing"'
+          args: 'bash -c "git fetch && git checkout staging && git log && git pull origin staging && git checkout testing && git pull origin testing && git log && git merge --ff-only --allow-unrelated-histories staging && git push origin testing"'
